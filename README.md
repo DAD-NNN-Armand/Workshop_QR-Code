@@ -16,7 +16,8 @@ par le détournement des QR codes
 
 ## Narration
 - **Acteurs**
-◦ Conservateur 
+
+◦ Conservateur
 ◦ Chargé de collection
 ◦ Restaurateur
 ◦ Historien de l’art / Archéologue / Ethnologue
@@ -24,6 +25,7 @@ par le détournement des QR codes
 ◦ Scénographe / Muséographe
 
 - **Scenario**
+
 On suit l’aventure de notre protagoniste pas vraiment passionné par les musées. Il reçoit une invitation au musée d'un ami qui l’invite à faire une nouvelle exposition temporaire avec lui. Ce n’est pas ce qui l'intéresse, mais si ça peut combler son temps libre il accepte.
 Dans son exploration il fait la rencontre de différents acteurs contribuant à la conservation et à la valorisation du Musées des Beaux-Arts.
 À la fin de son exploration, notre protagoniste s'avère si captivé par l'exposition qu'il ne se rend plus compte du temps qui passe.
