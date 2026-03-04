@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planche de BD Interactive</title>
+
+  <style>
+    /* ✅ Police locale Barlow */
+    @font-face {
+      font-family: 'Barlow';
+      src: url('src/font/Barlow-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      overflow-y: scroll;
+      background: #ddd;
+      font-family: sans-serif;
+    }
+
+    /* ✅ INTRO PLEIN ÉCRAN */
+    .intro {
+      font-family: 'Barlow', sans-serif;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      font-size: 1.2em;
+      z-index: 10;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .intro.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .credits {
+      font-size: 0.7em;
+      color: #666;
+      text-align: center;
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    /* ✅ CONTENEUR PRINCIPAL */
+    .container {
+      padding-top: 100vh;
+      overflow-x: auto;
+    }
+
+    /* ✅ PLANCHE DE BD */
+    .planche-bd {
+      width: 2180px;
+      height: 2540px;
+      padding: 15px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(6, 350px);
+      grid-auto-rows: 350px;
+      gap: 10px;
+      background-color: #fff;
+      border: 2px solid #444;
+    }
+
+    .vignette {
+      background-color: #fafafa;
+      border: 2px solid #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: filter 0.3s ease;
+      position: relative; /* nécessaire pour placer le numéro à l’intérieur */
+    }
+
+.vignette-number {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  font-size: 0.75em;
+  font-family: 'Barlow', sans-serif;
+  color: #333;
+  background-color: rgb(255, 255, 255);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+    .vignette img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .normal { grid-column: span 1; grid-row: span 1; }
+    .large  { grid-column: span 2; grid-row: span 1; }
+    .long   { grid-column: span 1; grid-row: span 2; }
+
+    .flou {
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .vide {
+      border: none;
+      background: transparent;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ INTRO -->
+  <div class="intro" id="intro">
+    <div>
+      <p>
+        Suivez le parcours du protagoniste en vous aidant des illustrations<br />
+        pour retrouver les QR codes disséminés dans le musée.
+      </p>
+      <div class="credits">
+        HALIMI Julie, LIKAFIA Sonia, POPOT Armand
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ CONTENU PRINCIPAL -->
+  <div class="container" id="container">
+    <div class="planche-bd">
+    <!-- Ligne 1 -->
+    <div class="vignette large">
+      <img src="src/img/1.jpg" alt="1"> 
+      <div class="vignette-number">1</div>
+    </div> <!-- intro 1-->
+     <div class="vignette large flou" data-step="1">
+      <img src="src/img/7.jpg" alt="7"> 
+        <div class="vignette-number">7</div>
+    </div> <!-- intro 7-->
+    <div class="vignette large flou" data-step="2">
+      <img src="src/img/12.jpg" alt="12"> 
+        <div class="vignette-number">12</div>
+    </div><!-- conservateur 12-->
+    
+
+    <!-- Ligne 2 -->
+     <div class="vignette normal">
+      <img src="src/img/2.jpg" alt="2">
+        <div class="vignette-number">2</div>
+    </div><!-- collectioneur 13-->
+    <div class="vignette normal">
+      <img src="src/img/3.jpg" alt="3"> 
+        <div class="vignette-number">3</div>
+    </div> <!-- intro 2-->
+    <div class="vignette long flou" data-step="1">
+      <img src="src/img/8.jpg" alt="8"> 
+        <div class="vignette-number">8</div>
+    </div> <!-- intro 3-->
+    <div class="vignette normal flou" data-step="1">
+      <img src="src/img/9.jpg" alt="9"> 
+        <div class="vignette-number">9</div>
+    </div><!-- conservateur 8-->
+    <div class="vignette normal flou" data-step="2">
+      <img src="src/img/13.jpg" alt="13"> 
+        <div class="vignette-number">13</div>
+    </div><!-- conservateur 9-->
+    <div class="vignette normal flou" data-step="2">
+      <img src="src/img/14.jpg" alt="14"> 
+        <div class="vignette-number">14</div>
+    </div><!-- collectioneur 14-->
+
+    <!-- Ligne 3 -->
+    <div class="vignette normal">
+      <img src="src/img/4.jpg" alt="4"> 
+        <div class="vignette-number">4</div>
+    </div> <!-- intro 4-->
+    <div class="vignette normal">
+      <img src="src/img/5.jpg" alt="5"> 
+        <div class="vignette-number">5</div>
+    </div> <!-- intro 5-->
+    <div class="vignette normal flou" data-step="1">
+      <img src="src/img/10.jpg" alt="10">
+        <div class="vignette-number">10</div>
+    </div><!-- conservateur 10-->
+    <div class="vignette normal flou" data-step="2">
+      <img src="src/img/15.jpg" alt="15">
+        <div class="vignette-number">15</div> 
+    </div><!-- collectioneur 15-->
+    <div class="vignette normal flou" data-step="2">
+      <img src="src/img/16.jpg" alt="16">
+        <div class="vignette-number">16</div> 
+    </div><!-- collectioneur 16-->
+
+    <!-- Ligne 4 -->
+    <div class="vignette large">
+      <img src="src/img/6.jpg" alt="6">
+        <div class="vignette-number">6</div> 
+    </div> <!-- intro 6-->
+    <div class="vignette vide">
+    </div><!-- conservateur 11-->
+      <div class="vignette vide">
+    </div>
+
+    <!-- Ligne 5 -->
+    <div class="vignette large flou" data-step="2">
+      <img src="src/img/17.jpg" alt="17">
+        <div class="vignette-number">17</div> 
+    </div><!-- muséographe 17-->
+    <div class="vignette normal flou" data-step="3">
+      <img src="src/img/18.jpg" alt="18">
+        <div class="vignette-number">18</div> 
+    </div><!-- muséographe 18-->
+    <div class="vignette normal flou" data-step="3">
+      <img src="src/img/19.jpg" alt="19">
+        <div class="vignette-number">19</div> 
+    </div><!-- muséographe 21-->
+    <div class="vignette large flou" data-step="4">
+      <img src="src/img/22.jpg" alt="22">
+        <div class="vignette-number">22</div> 
+    </div><!-- fin 22-->
+    
+    <div class="vignette vide"></div>
+    <div class="vignette vide"></div>
+  
+
+    <!-- Ligne 6 -->
+    <div class="vignette long flou" data-step="3">
+      <img src="src/img/20.jpg" alt="20">
+        <div class="vignette-number">20</div> 
+    </div><!-- muséographe 19-->
+    <div class="vignette long flou" data-step="3">
+      <img src="src/img/21.jpg" alt="21">
+        <div class="vignette-number">21</div> 
+    </div><!-- muséographe 20-->
+    <div class="vignette long flou" data-step="4">
+      <img src="src/img/23.jpg" alt="23">
+        <div class="vignette-number">23</div> 
+    </div><!-- fin 23-->
+    <div class="vignette vide"></div>
+    <!-- fin 24 -->
+    <div class="vignette vide"></div>
+    <!-- fin 24 -->
+     <div class="vignette vide"></div>
+    <!-- fin 24 -->
+
+    <!-- Ligne 7 -->
+    <div class="vignette normal flou" data-step="4">
+      <img src="src/img/24.jpg" alt="24">
+        <div class="vignette-number">24</div> 
+    </div><!-- fin 26-->
+
+    <div class="vignette normal flou" data-step="4">
+      <img src="src/img/25.jpg" alt="25">
+        <div class="vignette-number">25</div> 
+    </div><!-- fin 26-->
+
+    <div class="vignette normal flou" data-step="4">
+      <img src="src/img/26.jpg" alt="26">
+        <div class="vignette-number">26</div> 
+    </div><!-- fin 26-->
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ✅ SCRIPT -->
+  <script>
+    const intro = document.getElementById('intro');
+    const container = document.getElementById('container');
+
+    let hasScrolled = false;
+
+    window.addEventListener('scroll', () => {
+      if (!hasScrolled && (window.scrollX > 20 || window.scrollY > 20)) {
+        hasScrolled = true;
+        intro.classList.add('fade-out');
+
+        // Supprimer l'intro après transition
+        setTimeout(() => {
+          intro.remove();
+          container.style.paddingTop = '0';
+          window.scrollTo(0, 0);
+        }, 800); // correspond à la transition CSS
+      }
+    });
+
+    // ✅ Affichage progressif des étapes selon ?step=...
+    const params = new URLSearchParams(window.location.search);
+    const step = parseInt(params.get('step'), 10);
+
+    if (!isNaN(step)) {
+      for (let i = 1; i <= step; i++) {
+        document.querySelectorAll(`[data-step="${i}"]`).forEach(v => {
+          v.classList.remove('flou');
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
