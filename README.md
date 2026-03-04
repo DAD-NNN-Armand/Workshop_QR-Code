@@ -37,3 +37,9 @@ _Plaques de bois gravées au lazer_ :
     <img src="/src/img/QR-Codes gravés/20250911_154809.jpg" width="19%">
     <img src="/src/img/QR-Codes gravés/20250911_154833.jpg" width="19%">
 </p>
+
+_Vue d'ensemble_ :
+  <p align="center">
+     <img src="/src/img/ExempleDeRendu/Capture d'écran 2026-03-04 193140.png" width="45%">
+<img src="/src/img/ExempleDeRendu/Capture d'écran 2026-03-04 193359.png" width="45%">
+</p
