@@ -9,6 +9,11 @@ Web-Design
 - **Sonia Likafia**
 Détournement et mise en forme des QR-Code
 
+## Objectifs
+1. Créer une nouvelle forme d’expérience
+par le détournement des QR codes
+1. Donner de l'intérêt pour les expositions du musée, au visiteur, par le biais du récit et de la recherche des balises
+
 ## Narration
 - **Acteurs**
 ◦ Conservateur 
@@ -24,6 +29,11 @@ Dans son exploration il fait la rencontre de différents acteurs contribuant à 
 À la fin de son exploration, notre protagoniste s'avère si captivé par l'exposition qu'il ne se rend plus compte du temps qui passe.
 
 ## rendu
+_Plaques de bois gravées au lazer_ :
   <p align="center">
-<img src="/img/carnet.jpg" width="60%">
+     <img src="/src/img/QR-Codes gravés/20250911_154804.jpg" width="19%">
+<img src="/src/img/QR-Codes gravés/20250911_154800.jpg" width="19%">
+     <img src="/src/img/QR-Codes gravés/20250911_154820.jpg" width="19%">
+    <img src="/src/img/QR-Codes gravés/20250911_154809.jpg" width="19%">
+    <img src="/src/img/QR-Codes gravés/20250911_154833.jpg" width="19%">
 </p>
