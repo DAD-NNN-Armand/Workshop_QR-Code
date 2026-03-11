@@ -7,7 +7,7 @@ Illustration
 - **Julie Halimi**
 Web-Design
 - **Sonia Likafia**
-Détournement et mise en forme des QR-Code
+Détournement et mise en forme des QR-Codes
 
 ## Objectifs
 1. Créer une nouvelle forme d’expérience
